@@ -1,0 +1,56 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Blue header row */
+.terms-header {
+    background-color: #DCEAF7;
+    text-align: center;
+    padding: 80px 60px; /* Keeps proportions on zoom */
+}
+
+.terms-header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+/* Grey content section */
+.terms-content {
+    background-color: #F2F2F2;
+    font-size: 1.5rem;
+    padding: 30px 20px;
+    line-height: 1.6;
+    max-width: 80cap;
+    margin: auto;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+h3 {
+    color: #222;
+    border-bottom: 2px solid #D9D9D9;
+    padding-bottom: 8px;
+}
+p {
+    margin-bottom: 15px;
+}
+ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.highlight {
+    background: #D9D9D9;
+    padding: 10px;
+    border-left: 5px solid #555;
+}

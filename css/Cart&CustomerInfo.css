@@ -1,0 +1,175 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+}
+
+.cart-intro{
+    background-color: #DCEAF7;
+    text-align: center;
+    padding: 80px 60px;
+    padding-block-start: 100px;
+
+}
+
+.cart-items h1 {
+    margin: 0;
+    font-size: 5rem;
+    color:black;
+    
+}
+
+.cart-items nav {
+    text-align: right;
+
+}
+
+.cart-items nav a{
+    color: black;
+}
+
+.cart-items h1 {
+    margin: 0;
+    font-size: 3rem;
+    color:#DCEAF7;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: right;
+}
+
+.product-list {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: #DCEAF7;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #b7d3eb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.cart-items {
+    padding: 40px;
+}
+
+/* Cart table footer styling */
+tfoot td.overall-label {
+    text-align: right;
+    font-weight: bold;
+}
+tfoot td#overall-total {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Confirm Order button */
+.confirm-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 40px;
+}
+
+.confirm-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #217dbb;
+}
+
+
+/*===========================================================================*/
+
+/* Customer Info.html Form */
+.customer-info-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.customer-info-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.customer-info-container label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.customer-info-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.customer-info-container button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.customer-info-container button:hover {
+    background: #217dbb;
+}

@@ -1,0 +1,152 @@
+header h1 {
+    margin: 0;
+    padding: 10px;
+    font-size:6rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #F2F2F2;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.product-page {
+    background-color: #D9D9D9;
+    margin: 40px auto;
+    padding: 50px;
+    max-width: 1800px;
+    border-radius: 20px;
+}
+
+.product-section {
+    margin-bottom: 40px;
+}
+
+.product-section h2 {
+    font-size: 4rem;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.brand-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.brand-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 450px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.brand-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.brand-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-height: 200px;
+}
+
+.slider img {
+    display: none;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.slider img.active {
+    display: block;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider button:hover {
+    background: rgba(78, 205, 196, 0.8);
+    color: #1a1a2e;
+    transform: translateY(-50%) scale(1.1);
+}
+        
+.slider button.prev {
+    left: 5px;
+}
+
+.slider button.next {
+    right: 5px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.dots span {
+    height: 8px;
+    width: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.dots span.active {
+    background-color: #333;
+}
+
+.brand-card p {
+    flex: 0 0 auto;
+    min-height: 60px;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    margin-top: auto;
+    align-self: center;
+    width: 80%;
+    padding: 12px 0;
+    font-weight: bold;
+    background-color: #4ECDC4;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #2a9d8f;
+}

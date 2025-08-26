@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="/css/GameAccessories1.css"> 
+    <link rel="stylesheet" href="/css/stylesheet_product.css">
+    <link rel="stylesheet" href="/css/stylesheet_HF.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    /**/
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="/js/script.js" defer></script>
+    <script defer>
+    // Product data object
+    const products = {
+    // MSI Controllers
+    "MSI001": {
+        name: "FORCE GC30 V2 White Wireless Controller",
+        price: "RM279.00",
+        description: "This sleek white wireless controller from MSI offers seamless connectivity for PC and Android devices, with dual vibration motors for immersive feedback. It features a long-lasting lithium-ion battery that provides up to 8 hours of gameplay, and supports both wireless and wired modes for flexibility. Ideal for gamers seeking reliable performance without the need for additional drivers.",
+        images: [
+            "/images/Gaming Accessories/Controller/MSI/FORCE GC30 V2 White Wireless Controller/GC30W-1-1024x1024.png",
+            "/images/Gaming Accessories/Controller/MSI/FORCE GC30 V2 White Wireless Controller/GC30W-3-1024x1024.png"
+        ],
+        specs: "Brand Name: MSI <br> Model: GC30 V2 <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+        category: "controller"
+    },
+    "MSI002": {
+    name: "FORCE GC30 V2 Wireless Controller",
+    price: "RM259.00",
+    description: "The black edition of MSI's FORCE GC30 V2 delivers precise control with interchangeable D-pads and ergonomic design for extended sessions. Compatible with multiple platforms including PC and Android, it includes dual vibration for enhanced realism. No driver installation required, making it a plug-and-play option for casual and competitive gaming.",
+    images: [
+        "/images/Gaming Accessories/Controller/MSI/FORCE GC30 V2 Wireless Controller/GC30V2-1-1024x1024.png",
+        "/images/Gaming Accessories/Controller/MSI/FORCE GC30 V2 Wireless Controller/GC30V2-3-1024x1024.png"
+    ],
+    specs: "Brand Name: MSI <br> Model: Force GC30 V2 <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"MSI003": {
+    name: "FORCE GC300 Wireless White Controller",
+    price: "RM299.00",
+    description: "MSI's FORCE GC300 in white combines Hall effect triggers for accurate responses with wireless freedom and wired fallback. Designed for comfort, it includes programmable buttons and dual vibration motors to elevate your gaming experience. Perfect for PC gamers who value precision and battery life without driver hassles.",
+    images: [
+        "/images/Gaming Accessories/Controller/MSI/FORCE GC300 Wireless White Controller/GC300W-1024x1024.png",
+        "/images/Gaming Accessories/Controller/MSI/FORCE GC300 Wireless White Controller/GC300W3-1024x1024.png"
+    ],
+    specs: "Brand Name: MSI <br> Model: Force GC300 <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"MSI004": {
+    name: "FORCE GC300 Wireless Controller",
+    price: "RM279.00",
+    description: "This wireless controller boasts advanced Hall effect technology for smooth, drift-free joystick movement and customizable triggers. With support for Bluetooth and 2.4GHz connectivity, it's versatile across devices and offers up to 20 hours of playtime. Driver-free setup ensures quick integration into your setup for uninterrupted action.",
+    images: [
+        "/images/Gaming Accessories/Controller/MSI/FORCE GC300 Wireless Controller/GC300W-2-1024x1024.png",
+        "/images/Gaming Accessories/Controller/MSI/FORCE GC300 Wireless Controller/GC300W-6-1024x1024.png",
+        "/images/Gaming Accessories/Controller/MSI/FORCE GC300 Wireless Controller/GC300W-11-1024x1024.png"
+    ],
+    specs: "Brand Name: MSI <br> Model: Force GC300 <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"MSI005": {
+    name: "FORCE PRO Wireless Controller",
+    price: "RM349.00",
+    description: "MSI's premium FORCE PRO model features pro-level customization with rear programmable buttons and enhanced grip for intense gameplay. It supports tri-mode connectivity (wireless, Bluetooth, wired) and includes RGB lighting for a personalized touch. No drivers needed, making it suitable for esports enthusiasts on PC and consoles.",
+    images: [
+        "/images/Gaming Accessories/Controller/MSI/FORCE PRO Wireless Controller/FPW-1-1024x1024.png",
+        "/images/Gaming Accessories/Controller/MSI/FORCE PRO Wireless Controller/FPW-5-1024x1024.png",
+        "/images/Gaming Accessories/Controller/MSI/FORCE PRO Wireless Controller/FPW-9-1024x1024.png"
+    ],
+    specs: "Brand Name: MSI <br> Model: Force Pro <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+
+// Razer Controllers
+"Razer001": {
+    name: "Razer Wolverine Ultimate",
+    price: "RM349.00",
+    description: "The Razer Wolverine Ultimate is a customizable wired controller with interchangeable thumbsticks and D-pads for tailored control on Xbox and PC. It includes six remappable buttons and hair-trigger locks for faster response times in competitive games. Built with Chroma RGB lighting and ergonomic design, it's perfect for gamers demanding precision and style.",
+    images: [
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine Ultimate/R0013.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine Ultimate/R0012.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine Ultimate/R0011.jpg"
+    ],
+    specs: "Brand Name: Razer <br> Model: Wolverine Ultimate <br> Type: Gamepad <br> Connection: Wired <br> Driver: No",
+    category: "controller"
+},
+"Razer002": {
+    name: "Razer Wolverine V3 Pro - Black",
+    price: "RM529.00",
+    description: "This high-end wireless esports controller features HyperSpeed Wireless for low-latency performance and Hall effect sensors to prevent stick drift. With adjustable triggers, back paddles, and Chroma RGB, it's optimized for Xbox Series X|S and PC. The black variant offers a sleek look with up to 20 hours of battery life for pro-level gaming.",
+    images: [
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Pro - Black/R0022.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Pro - Black/R0021.jpg"
+    ],
+    specs: "Brand Name: Razer <br> Model: Wolverine V3 Pro <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"Razer003": {
+    name: "Razer Wolverine V3 Pro - White",
+    price: "RM529.00",
+    description: "Razer's white Wolverine V3 Pro delivers pro-grade wireless control with mecha-tactile buttons and customizable sensitivity via the Razer app. It supports seamless switching between Xbox and PC modes, complete with vibration feedback and ergonomic grips. Ideal for extended sessions, it combines aesthetics with drift-resistant Hall effect joysticks.",
+    images: [
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Pro - White/R0032.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Pro - White/R0031.jpg"
+    ],
+    specs: "Brand Name: Razer <br> Model: Wolverine V3 Pro <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"Razer004": {
+    name: "Razer Wolverine V3 Tournament Edition - Black",
+    price: "RM541.00",
+    description: "Designed for tournaments, this wired controller includes lockable triggers and remappable back buttons for quick actions on Xbox and PC. The black edition features Razer's signature mecha-tactile switches for crisp feedback and anti-drift sensors. It's a budget-friendly pro option with no drivers required for instant setup.",
+    images: [
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - Black/R0043.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - Black/R0042.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - Black/R0041.jpg"
+    ],
+    specs: "Brand Name: Razer <br> Model: Wolverine V3 Tournament Edition <br> Type: Gamepad <br> Connection: Wired <br> Driver: No",
+    category: "controller"
+},
+"Razer005": {
+    name: "Razer Wolverine V3 Tournament Edition - White",
+    price: "RM541.00",
+    description: "The white Tournament Edition offers wired reliability with customizable controls and Hall effect technology to ensure long-term accuracy. Perfect for competitive play, it includes adjustable dead zones and vibration motors for immersion. Compatible with Xbox and PC, it's driver-free and built for gamers who prioritize speed and comfort.",
+    images: [
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - White/R0055.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - White/R0052.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - White/R0053.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - White/R0054.jpg",
+        "/images/Gaming Accessories/Controller/Razer/Razer Wolverine V3 Tournament Edition - White/R0051.jpg"
+    ],
+    specs: "Brand Name: Razer <br> Model: Wolverine V3 Tournament Edition <br> Type: Gamepad <br> Connection: Wired <br> Driver: No",
+    category: "controller"
+},
+
+// ROG Controllers
+"ROG001": {
+    name: "ROG Kunai 3 Bumper for ROG Phone 5 Mobile Controller",
+    price: "RM39.00",
+    description: "This compact bumper transforms your ROG Phone 5 into a handheld gaming console by attaching modular controllers for precise mobile gaming. It supports wireless connectivity and ergonomic design for comfortable play on the go. No drivers needed, making it an essential accessory for ASUS ROG enthusiasts.",
+    images: [
+        "/images/Gaming Accessories/Controller/ROG/ROG Kunai 3 Bumper for ROG Phone 5 Mobile Controller/h732.png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Kunai 3 Bumper for ROG Phone 5 Mobile Controller/h732 (1).png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Kunai 3 Bumper for ROG Phone 5 Mobile Controller/h732 (3).png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Kunai 3 <br> Type: Mobile Controller <br> Connection: Wireless <br> Driver: No",
+    category: "controller"
+},
+"ROG002": {
+    name: "ROG Raikiri PC Controller",
+    price: "RM399.00",
+    description: "The ROG Raikiri is a customizable wired controller with rear buttons, adjustable triggers, and built-in ESS DAC for superior audio on PC and Xbox. It features Aura Sync RGB lighting and step triggers for fine-tuned control in shooters and racers. Driver-free but app-enhanced for personalization.",
+    images: [
+        "/images/Gaming Accessories/Controller/ROG/ROG Raikiri PC Controller/h732 (2).png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Raikiri PC Controller/h732 (1).png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Raikiri PC Controller/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Raikiri <br> Type: Gamepad <br> Connection: Wired <br> Driver: No",
+    category: "controller"
+},
+"ROG003": {
+    name: "ROG Raikiri Pro PC Controller",
+    price: "RM699.00",
+    description: "This tri-mode wireless controller includes an OLED display for real-time stats, programmable buttons, and Hall effect joysticks for drift-free performance. Compatible with PC and Xbox, it offers Bluetooth, 2.4GHz, and wired options with up to 48 hours of battery. Ideal for pro gamers with Aura RGB and no mandatory drivers.",
+    images: [
+        "/images/Gaming Accessories/Controller/ROG/ROG Raikiri Pro PC Controller/h732 (3).png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Raikiri Pro PC Controller/h732 (1).png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Raikiri Pro PC Controller/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Raikiri Pro <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"ROG004": {
+    name: "ROG Tessen Mobile Controller",
+    price: "RM499.00",
+    description: "ROG's foldable Tessen is a USB-C mobile controller with mechanical switches and programmable buttons for Android devices. It features Aura RGB lighting, 18W passthrough charging, and gyro aiming for immersive mobile gaming. Driver-free and compact, it's perfect for on-the-go players seeking console-like control.",
+    images: [
+        "/images/Gaming Accessories/Controller/ROG/ROG Tessen Mobile Controller/h732.png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Tessen Mobile Controller/h732 (1).png",
+        "/images/Gaming Accessories/Controller/ROG/ROG Tessen Mobile Controller/h732 (2).png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Tessen <br> Type: Mobile Controller <br> Connection: Wired <br> Driver: No",
+    category: "controller"
+},
+
+// Acer Controllers
+"Acer001": {
+    name: "Acer Nitro Mobile Gaming Controller Black",
+    price: "RM439.00",
+    description: "This black mobile controller clips onto your phone for wireless gaming with adjustable fit and Hall effect joysticks. It supports Bluetooth connectivity for Android and iOS, with vibration feedback for enhanced immersion. No drivers required, making it a versatile pick for mobile gamers.",
+    images: [
+        "/images/Gaming Accessories/Controller/Acer/Acer Nitro Mobile Gaming Controller Black (Retail Pack)/A0011.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Acer Nitro Mobile Gaming Controller Black (Retail Pack)/A0012.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Acer Nitro Mobile Gaming Controller Black (Retail Pack)/A0013.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Nitro <br> Type: Mobile Controller <br> Connection: Wireless <br> Driver: No",
+    category: "controller"
+},
+"Acer002": {
+    name: "Nitro Wireless Gaming Controller Black (Retail Pack)",
+    price: "RM169.00",
+    description: "Acer's Nitro black wireless controller offers dual-mode connectivity (Bluetooth/wired) and asymmetric vibration for realistic feel on PC and consoles. With a 600mAh battery for long sessions, it's ergonomic and driver-free. Great for budget-conscious gamers seeking reliable performance.",
+    images: [
+        "/images/Gaming Accessories/Controller/Acer/Nitro Wireless Gaming Controller Black (Retail Pack)/A0023.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Nitro Wireless Gaming Controller Black (Retail Pack)/A0022.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Nitro Wireless Gaming Controller Black (Retail Pack)/A0021.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Nitro <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"Acer003": {
+    name: "Nitro Wireless Gaming Controller White (Retail Pack)",
+    price: "RM169.00",
+    description: "The white Nitro variant provides the same wireless freedom with customizable buttons and gyro sensors for motion control. Compatible with multiple platforms, it includes turbo functions and no driver setup. A stylish, affordable option for casual gaming.",
+    images: [
+        "/images/Gaming Accessories/Controller/Acer/Nitro Wireless Gaming Controller White (Retail Pack)/A0033.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Nitro Wireless Gaming Controller White (Retail Pack)/A0032.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Nitro Wireless Gaming Controller White (Retail Pack)/A0031.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Nitro <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+"Acer004": {
+    name: "Predator Wireless Gaming Controller Black (Retail Pack)",
+    price: "RM399.00",
+    description: "Acer's premium Predator controller features Hall triggers, RGB lighting, and programmable macros for competitive edge on PC and Xbox. It supports wireless and wired modes with a high-capacity battery. Driver-free, it's built for intense sessions with superior grip and feedback.",
+    images: [
+        "/images/Gaming Accessories/Controller/Acer/Predator Wireless Gaming Controller Black (Retail Pack)/A0041.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Predator Wireless Gaming Controller Black (Retail Pack)/A0042.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Predator Wireless Gaming Controller Black (Retail Pack)/A0043.jpg",
+        "/images/Gaming Accessories/Controller/Acer/Predator Wireless Gaming Controller Black (Retail Pack)/A0044.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Predator <br> Type: Gamepad <br> Connection: Wireless / Wired <br> Driver: No",
+    category: "controller"
+},
+
+// ROG Headsets
+"ROG101": {
+    name: "ROG Delta II Gaming Headset",
+    price: "RM799.00",
+    description: "This wired headset features dual high-res drivers for exceptional audio detail and AI noise cancellation for crystal-clear calls. With RGB lighting and ergonomic design, it's compatible with PC, consoles, and mobile via USB-C, ideal for versatile gamers.",
+    images: [
+        "/images/Gaming Accessories/Head Set/ROG/ROG Delta II Gaming Headset/h525 (1).png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Delta II <br> Type: Gaming Headset <br> Connection: Wired",
+    category: "headset"
+},
+"ROG102": {
+    name: "ROG Delta S Core Gaming Headset",
+    price: "RM399.00",
+    description: "A lightweight wired model with 50mm drivers for immersive sound and a Discord-certified mic. It includes detachable cushions and 3.5mm connectivity for broad compatibility, making it a solid entry-level choice for PC and console users.",
+    images: [
+        "/images/Gaming Accessories/Head Set/ROG/ROG Delta S Core Gaming Headset/h525 (1).png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Delta S Core <br> Type: Gaming Headset <br> Connection: Wired",
+    category: "headset"
+},
+"ROG103": {
+    name: "ROG Delta S EVA Edition Gaming Headset",
+    price: "RM899.00",
+    description: "Evangelion-themed with hi-fi ESS Quad DAC for superior audio and AI mic noise reduction. It supports multi-platform use with customizable Aura Sync RGB, appealing to anime fans and audiophiles alike.",
+    images: [
+        "/images/Gaming Accessories/Head Set/ROG/ROG Delta S EVA Edition Gaming Headset/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Delta S EVA Edition <br> Type: Gaming Headset <br> Connection: Wired",
+    category: "headset"
+},
+"ROG104": {
+    name: "ROG Delta S Wireless Gaming Headset",
+    price: "RM699.00",
+    description: "Dual-mode wireless (Bluetooth/2.4GHz) with low-latency audio and up to 25 hours of battery. Features beamforming mics and comfortable protein leather earcups, perfect for wireless freedom in PC and mobile gaming.",
+    images: [
+        "/images/Gaming Accessories/Head Set/ROG/ROG Delta S Wireless Gaming Headset/h525.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Delta S <br> Type: Gaming Headset <br> Connection: Wireless",
+    category: "headset"
+},
+"ROG105": {
+    name: "ROG Pelta Gaming Headset",
+    price: "RM599.00",
+    description: "This tri-mode headset offers Bluetooth, 2.4GHz, and wired options with high-res drivers and active noise cancellation. With long battery life and customizable controls, it's designed for immersive, distraction-free gaming across devices.",
+    images: [
+        "/images/Gaming Accessories/Head Set/ROG/ROG Pelta Gaming Headset/h525.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Pelta <br> Type: Gaming Headset <br> Connection: Wireless / Wired",
+    category: "headset"
+},
+
+// Acer Headsets
+"Acer101": {
+    name: "Acer Conference Headset Black (Retail Pack)",
+    price: "RM199.00",
+    description: "A wired headset optimized for calls with noise-canceling mic and comfortable padding. It features inline controls and USB connectivity, suitable for professional video conferences and light gaming on PC.",
+    images: [
+        "/images/Gaming Accessories/Head Set/Acer/Acer Conference Headset Black (Retail Pack)/acer_conference_headset_black_retail_pack_2_2_gp.hds11.02d.jpg",
+        "/images/Gaming Accessories/Head Set/Acer/Acer Conference Headset Black (Retail Pack)/acer_conference_headset_black_retail_pack_6_2_gp.hds11.02d.jpg",
+        "/images/Gaming Accessories/Head Set/Acer/Acer Conference Headset Black (Retail Pack)/acer_conference_headset_black_retail_pack_8_2_gp.hds11.02d.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Conference Headset <br> Type: Headset <br> Connection: Wired",
+    category: "headset"
+},
+"Acer102": {
+    name: "Acer Predator Galea 315 Gaming Headset",
+    price: "RM249.00",
+    description: "This wired gaming headset delivers 50mm drivers for powerful bass and a retractable mic for clear communication. With adjustable headband and RGB accents, it's compatible with PC and consoles for budget gamers.",
+    images: [
+        "/images/Gaming Accessories/Head Set/Acer/Acer Predator Galea 315 Gaming Headset/galea315-02.png-custom_gp.hds11.01m.jpg",
+        "/images/Gaming Accessories/Head Set/Acer/Acer Predator Galea 315 Gaming Headset/galea315-06.png-custom_gp.hds11.01m.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Predator Galea 315 <br> Type: Gaming Headset <br> Connection: Wired",
+    category: "headset"
+},
+"Acer103": {
+    name: "Acer Predator Galea 365 Gaming Headset",
+    price: "RM349.00",
+    description: "Featuring virtual 7.1 surround sound and vibration feedback for enhanced immersion, this wired model includes a noise-canceling mic and ergonomic design. Ideal for PC gamers seeking tactile audio experiences.",
+    images: [
+        "/images/Gaming Accessories/Head Set/Acer/Acer Predator Galea 365 Gaming Headsetblack/galea365_1__gp.hds11.01l.jpg",
+        "/images/Gaming Accessories/Head Set/Acer/Acer Predator Galea 365 Gaming Headsetblack/galea365_3__gp.hds11.01l.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Predator Galea 365 <br> Type: Gaming Headset <br> Connection: Wired",
+    category: "headset"
+},
+// Lenovo Headsets
+"Lenovo101": {
+    name: "Lenovo Legion E510 7.1 RGB Gaming In-Ear Headphones",
+    price: "RM199.00",
+    description: "These wired in-ear buds offer virtual 7.1 surround with RGB lighting and inline mic/controls. Compact and sweat-resistant, they're perfect for mobile and PC gaming on the move.",
+    images: [
+        "/images/Gaming Accessories/Head Set/Lenovo/Lenovo Legion E510 7.1 RGB Gaming In-Ear Headphones/gwkssruzrgp032t8afedew139shhbo606521.avif",
+        "/images/Gaming Accessories/Head Set/Lenovo/Lenovo Legion E510 7.1 RGB Gaming In-Ear Headphones/yel5gopeu92blsqzzfr986xnkbd6vb497794.avif"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion E510 7.1 RGB <br> Type: Gaming Headphones <br> Connection: Wired",
+    category: "headset"
+},
+"Lenovo102": {
+    name: "Lenovo Legion H500 Pro 7.1 Surround Sound Gaming Headset",
+    price: "RM399.00",
+    description: "A wired headset with 7.1 surround via USB sound card and retractable mic. It features memory foam comfort and multi-platform support, great for immersive PC and console play.",
+    images: [
+        "/images/Gaming Accessories/Head Set/Lenovo/Lenovo Legion H500 Pro 7.1 Surround Sound Gaming Headset/GXD0T69864-560x450-01.avif",
+        "/images/Gaming Accessories/Head Set/Lenovo/Lenovo Legion H500 Pro 7.1 Surround Sound Gaming Headset/GXD0T69864-560x450-02.avif"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion H500 Pro 7.1 <br> Type: Gaming Headset <br> Connection: Wired",
+    category: "headset"
+},
+"Lenovo103": {
+    name: "Lenovo Legion H600 Wireless Gaming Headset",
+    price: "RM499.00",
+    description: "Wireless with 2.4GHz connectivity and up to 20 hours of battery, this headset includes earcup charging and premium drivers for balanced sound. Suitable for PC and PS gamers seeking cordless convenience.",
+    images: [
+        "/images/Gaming Accessories/Head Set/Lenovo/Lenovo Legion H600 Wireless Gaming Headset (Stingray)/GXD1C98345-560x450-03.avif",
+        "/images/Gaming Accessories/Head Set/Lenovo/Lenovo Legion H600 Wireless Gaming Headset (Stingray)/GXD1C98345-560x450-06.avif"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion H600 <br> Type: Gaming Headset <br> Connection: Wireless",
+    category: "headset"
+},
+// MSI Monitors
+"MSI201": {
+    name: "MSI MAG 244F 23.8 FHD 200Hz Gaming Monitor",
+    price: "RM599.00",
+    description: "This 23.8-inch IPS panel offers 200Hz refresh rate and 1ms response for smooth gameplay. With Adaptive Sync and HDR support, it's ideal for competitive esports on a compact setup.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI MAG 244F 23.8 FHD 200Hz Gaming Monitor/WebMAG244F1.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI MAG 244F 23.8 FHD 200Hz Gaming Monitor/WebMAG244F4.jpg"
+    ],
+    specs: "Brand Name: MSI <br> Model: MAG 244F <br> Type: Gaming Monitor <br> Curved: No <br> Size: 23.8",
+    category: "monitor"
+},
+"MSI202": {
+    name: "MSI MAG 274QRF QD E2 Rapid IPS 180Hz Flat Gaming Monitors",
+    price: "RM999.00",
+    description: "A 27-inch Quantum Dot IPS display with 180Hz and WQHD resolution for vibrant colors and sharp details. Features KVM switch and USB-C charging, perfect for gaming and productivity.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI MAG 274QRF QD E2 Rapid IPS 180Hz Flat Gaming Monitors ( 27 inch )/MAG274QRF-QDE2_1.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI MAG 274QRF QD E2 Rapid IPS 180Hz Flat Gaming Monitors ( 27 inch )/MAG274QRF-QDE2_5.jpg"
+    ],
+    specs: "Brand Name: MSI <br> Model: MAG 274QRF <br> Type: Gaming Monitor <br> Curved: No <br> Size: 27",
+    category: "monitor"
+},
+"MSI203": {
+    name: "MSI Optix MPG321UR-QD 32 inch 144Hz IPS Gaming Monitor",
+    price: "RM2499.00",
+    description: "This 32-inch 4K UHD monitor boasts 144Hz refresh and Quantum Dot tech for stunning visuals. With HDMI 2.1 and built-in speakers, it's suited for console and PC gamers seeking high-res.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI Optix MPG321UR-QD 32 inch 144Hz IPS Gaming Monitor/2_92130578-5567-41cd-bdcf-7e72648eb504.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI Optix MPG321UR-QD 32 inch 144Hz IPS Gaming Monitor/MSI 3.jpg"
+    ],
+    specs: "Brand Name: MSI <br> Model: Optix MPG321 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 32",
+    category: "monitor"
+},
+"MSI204": {
+    name: "MSI PRO MP251L E2 24.5 IPS FHD 120Hz Business & Productivity Monitor",
+    price: "RM499.00",
+    description: "A 24.5-inch IPS with 120Hz for fluid multitasking and eye-care features like anti-flicker. Includes ergonomic stand and VESA mount, great for office and light gaming.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI PRO MP251L E2 24.5 IPS FHD 120Hz Business & Productivity Monitor/jpgROMP251LE21.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI PRO MP251L E2 24.5 IPS FHD 120Hz Business & Productivity Monitor/jpgROMP251LE24.jpg"
+    ],
+    specs: "Brand Name: MSI <br> Model: PRO MP251L <br> Type: Monitor <br> Curved: No <br> Size: 24.5",
+    category: "monitor"
+},
+"MSI205": {
+    name: "MSI Pro MP275 27 inch IPS Flat Business & Productivity Monitors",
+    price: "RM599.00",
+    description: "This 27-inch FHD IPS offers slim bezels and built-in speakers for versatile use. With 75Hz refresh and multiple inputs, it's designed for everyday productivity and media.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI Pro MP275 27 inch IPS Flat Business & Productivity Monitors/edit.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/MSI/MSI Pro MP275 27 inch IPS Flat Business & Productivity Monitors/MP275_5.jpg"
+    ],
+    specs: "Brand Name: MSI <br> Model: Pro MP275 <br> Type: Monitor <br> Curved: No <br> Size: 27",
+    category: "monitor"
+},
+// Lenovo Monitors
+"Lenovo201": {
+    name: "Lenovo Legion 27-10 27 Monitor",
+    price: "RM899.00",
+    description: "A 27-inch QHD IPS with 240Hz refresh and HDR400 for vivid gaming. Features AMD FreeSync Premium and ergonomic adjustments, ideal for fast-paced titles.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion 27-10 27 Monitor/27461061608_27Q10_202507070518021752515419787.jpg"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion 27 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 27",
+    category: "monitor"
+},
+"Lenovo202": {
+    name: "Lenovo Legion R27q-30 27 Monitor",
+    price: "RM999.00",
+    description: "This 27-inch QHD display offers 165Hz and 0.5ms response with Natural Low Blue Light. Includes KVM and USB hub, perfect for gaming and content creation.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion R27q-30 27 Monitor/gxc0clls4m5h4h96vpp4oouvdax7tp178859.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion R27q-30 27 Monitor/vjdzqk76repi8cyrvy9bh7qz4wzknt238271.avif"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion R27q-30 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 27",
+    category: "monitor"
+},
+"Lenovo203": {
+    name: "Lenovo Legion R27qc-30 27 Monitor",
+    price: "RM1099.00",
+    description: "A curved 27-inch QHD VA panel with 180Hz and 1500R curvature for immersion. Supports VRR and has built-in speakers, suited for racing and FPS games.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion R27qc-30 27 Monitor/Legion-R27qc-30gallery-560x450-1.avif",
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion R27qc-30 27 Monitor/Legion-R27qc-30gallery-560x450-4.avif"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion R27qc-30 <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 27",
+    category: "monitor"
+},
+"Lenovo204": {
+    name: "Lenovo Legion R32qc-30 31.5 Monitor",
+    price: "RM1299.00",
+    description: "This 31.5-inch curved QHD with 170Hz and HDR support provides wide viewing angles. Features PIP/PBP modes, great for multitasking gamers.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion R32qc-30 31.5 Monitor/26599898405_R32qc30_202407160323191721582110274.jpg"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion R32qc-30 <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 31.5",
+    category: "monitor"
+},
+"Lenovo205": {
+    name: "Lenovo Legion R45w-30 44.5 Monitor",
+    price: "RM2999.00",
+    description: "An ultrawide 44.5-inch curved DQHD with 165Hz and Picture-by-Picture. Includes USB-C docking and KVM, ideal for simulation and productivity setups.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion R45w-30 44.5 Monitor/f7i1jwy10eqrl5mlf9pfxmncgsg1fv015908.avif",
+        "/images/Gaming Accessories/Gaming Monitor/Lenovo/Lenovo Legion R45w-30 44.5 Monitor/bhl31xbmlcsdv4wugc3p9l1ycponba115908.avif"
+    ],
+    specs: "Brand Name: Lenovo <br> Model: Legion R45w-30 <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 44.5",
+    category: "monitor"
+},
+
+
+// ROG Monitors
+"ROG201": {
+    name: "ROG Strix OLED XG27AQDPG",
+    price: "RM3999.00",
+    description: "A 26.5-inch QHD OLED with 480Hz refresh and anti-glare coating for blur-free motion. Features custom heatsink and AI visuals, perfect for esports pros.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix OLED XG27AQDPG/h732 (2).png",
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix OLED XG27AQDPG/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Strix OLED XG27AQDPG <br> Type: Gaming Monitor <br> Curved: No <br> Size: 26.5",
+    category: "monitor"
+},
+"ROG202": {
+    name: "ROG Strix OLED XG32UCDS",
+    price: "RM4999.00",
+    description: "This 32-inch 4K OLED offers 240Hz and Dolby Vision for cinematic gaming. With uniform brightness and Aura Sync, it's designed for high-end PC setups.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix OLED XG32UCDS/h525.png",
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix OLED XG32UCDS/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Strix OLED XG32UCDS <br> Type: Gaming Monitor <br> Curved: No <br> Size: 32",
+    category: "monitor"
+},
+"ROG203": {
+    name: "ROG Strix OLED XG34WCDG",
+    price: "RM5499.00",
+    description: "A 34-inch ultrawide curved OLED with 800R curve and 240Hz for immersive views. Includes Smart KVM and Wi-Fi antenna, suited for multitasking gamers.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix OLED XG34WCDG/h732 (2).png",
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix OLED XG34WCDG/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Strix OLED XG34WCDG <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 34",
+    category: "monitor"
+},
+"ROG204": {
+    name: "ROG Strix XG27ACMEG-G Hatsune Miku Edition",
+    price: "RM1999.00",
+    description: "Limited-edition 27-inch QHD IPS with 360Hz and G-SYNC for ultra-smooth play. Themed design with customizable RGB, appealing to anime enthusiasts.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix XG27ACMEG-G Hatsune Miku Edition/h732 (1).png",
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Strix XG27ACMEG-G Hatsune Miku Edition/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Strix XG27ACMEG-G Hatsune Miku Edition <br> Type: Gaming Monitor <br> Curved: No <br> Size: 27",
+    category: "monitor"
+},
+"ROG205": {
+    name: "ROG Swift OLED PG32UCDMR",
+    price: "RM5999.00",
+    description: "A 32-inch 4K OLED with 240Hz, dual-mode refresh, and burn-in prevention. Features spectrum analyzer and USB hub, ideal for creators and gamers.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Swift OLED PG32UCDMR/h732 (1).png",
+        "/images/Gaming Accessories/Gaming Monitor/ROG/ROG Swift OLED PG32UCDMR/h732.png"
+    ],
+    specs: "Brand Name: ROG <br> Model: Swift OLED PG32UCDMR <br> Type: Gaming Monitor <br> Curved: No <br> Size: 32",
+    category: "monitor"
+},
+// Acer Monitors
+"Acer201": {
+    name: "Acer NITRO ED270US3 (Curve)",
+    price: "RM799.00",
+    description: "This 27-inch curved VA with 180Hz and 1500R curvature offers AMD FreeSync Premium. With zero-frame design, it's great for immersive budget gaming.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO ED270US3 (Curve)/acer-nitro-monitor-ed0-ed270r-s3-ed270u-p2-wallpaper-01-custom_um.he0sm.302.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO ED270US3 (Curve)/acer-nitro-monitor-ed0-ed270r-s3-ed270u-p2-wallpaper-02-custom_um.he0sm.302.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO ED270US3 (Curve)/acer-nitro-monitor-ed0-ed270r-s3-ed270u-p2-06-custom_um.he0sm.302.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO ED270US3 (Curve)/acer-nitro-monitor-ed0-ed270r-s3-ed270u-p2-04-custom_um.he0sm.302.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: NITRO ED270US3 <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 27",
+    category: "monitor"
+},
+"Acer202": {
+    name: "Acer NITRO KG240Y X1",
+    price: "RM499.00",
+    description: "A 23.8-inch FHD IPS with 180Hz and HDR10 for vibrant colors. Includes built-in speakers and ergonomic stand, suitable for entry-level esports.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO KG240Y X1/acer-monitor-nitro-kg240y-m5-kg270-m5-wallpaper-01-custom_um.qx0sm.102.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO KG240Y X1/acer-monitor-nitro-kg240y-m5-kg270-m5-04-custom_um.qx0sm.102.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: NITRO KG240Y X1 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 23.8",
+    category: "monitor"
+},
+"Acer203": {
+    name: "Acer NITRO KG270 X1",
+    price: "RM599.00",
+    description: "This 27-inch FHD IPS features 240Hz and 0.5ms response for fast action. With VESA mount and multiple ports, it's versatile for PC setups.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO KG270 X1/acer-monitor-nitro-kg240y-m5-kg270-m5-wallpaper-01-custom_um.hx0sm.101.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO KG270 X1/acer-monitor-nitro-kg240y-m5-kg270-m5-04-custom_um.hx0sm.101.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: NITRO KG270 X1 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 27",
+    category: "monitor"
+},
+"Acer204": {
+    name: "Acer NITRO XV240Y X1",
+    price: "RM699.00",
+    description: "A 23.8-inch FHD IPS with 540Hz overclock and DyAc+ for motion clarity. Designed for competitive FPS, with black equalizer tech.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO XV240Y X1/acer-nitro-monitor-xv272u-f3-wallpaper-01-custom_um.qx0sm.101.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/NITRO XV240Y X1/acer-nitro-monitor-xv272u-f3-04-custom_um.qx0sm.101.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: NITRO XV240Y X1 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 23.8",
+    category: "monitor"
+},
+"Acer205": {
+    name: "Acer Nitro XZ306CX (Curve)",
+    price: "RM899.00",
+    description: "This 29.5-inch curved UWHD VA with 200Hz and 1500R for wide immersion. Supports HDR and has adjustable stand, perfect for racing sims.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Acer/Nitro XZ306CX (Curve)/xz6_xz306cx_wp23-01_um.rx6sm.x02.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/Nitro XZ306CX (Curve)/xz6_xz306cx_wp23-03_um.rx6sm.x02.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Acer/Nitro XZ306CX (Curve)/xz6_xz306cx_04_um.rx6sm.x02.jpg"
+    ],
+    specs: "Brand Name: Acer <br> Model: Nitro XZ306CX <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 29.5",
+    category: "monitor"
+},
+// Machenike Monitors
+"Machenike201": {
+    name: "Machenike MK23 Series - MK23FG165S1 Monitor",
+    price: "RM499.00",
+    description: "A 24.5-inch FHD IPS with 165Hz and 1ms for smooth gameplay. Features adaptive sync and eye-care modes, ideal for budget gamers.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK23 Series - MK23FG165S1 Monitor/1_688e6912-cf07-4d1c-88c8-ca22b06b15d3.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK23 Series - MK23FG165S1 Monitor/3_ce6f6150-6114-4083-a744-c769bc557cf9.jpg"
+    ],
+    specs: "Brand Name: Machenike <br> Model: MK23FG165S1 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 24.5",
+    category: "monitor"
+},
+"Machenike202": {
+    name: "Machenike MK27 Series - MK27QG170S2 Monitor",
+    price: "RM799.00",
+    description: "This 27-inch QHD IPS offers 170Hz and HDR400 for detailed visuals. With USB-C and KVM, it's great for gaming and work.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK27 Series - MK27QG170S2 Monitor/1_6bb1c9c8-6c34-470e-b171-ee77d48a52cc.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK27 Series - MK27QG170S2 Monitor/3_a5e11aa0-9b70-451a-a54d-8c28bd030682.jpg"
+    ],
+    specs: "Brand Name: Machenike <br> Model: MK27QG170S2 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 27",
+    category: "monitor"
+},
+"Machenike203": {
+    name: "Machenike MK32 Series - MK32QG165S2 Monitor",
+    price: "RM999.00",
+    description: "A 32-inch QHD VA with 165Hz and curved option for immersion. Includes RGB lighting and multiple inputs, suited for console gaming.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK32 Series - MK32QG165S2 Monitor/800x800-4.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK32 Series - MK32QG165S2 Monitor/800x800-2.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK32 Series - MK32QG165S2 Monitor/800x800-5.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK32 Series - MK32QG165S2 Monitor/800x800-7.jpg"
+    ],
+    specs: "Brand Name: Machenike <br> Model: MK32QG165S2 <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 32",
+    category: "monitor"
+},
+"Machenike204": {
+    name: "Machenike MK32 Series - MK32UG144S2 Monitor",
+    price: "RM1499.00",
+    description: "This 32-inch 4K UHD IPS with 144Hz and mini-LED for high contrast. Features local dimming and VRR, perfect for premium setups.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK32 Series - MK32UG144S2 Monitor/1_ea7d8aa8-253e-4315-9056-a1c3b22cc2ee.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK32 Series - MK32UG144S2 Monitor/5_80f7c53e-1df4-4c48-b86f-88e3deeaa874.jpg"
+    ],
+    specs: "Brand Name: Machenike <br> Model: MK32UG144S2 <br> Type: Gaming Monitor <br> Curved: No <br> Size: 32",
+    category: "monitor"
+},
+"Machenike205": {
+    name: "Machenike MK34 Series - MK34QG165SC2 Monitor",
+    price: "RM1299.00",
+    description: "A 34-inch ultrawide QHD with 165Hz and 1000R curve. Supports PIP and has built-in speakers, ideal for productivity and gaming.",
+    images: [
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK34 Series - MK34QG165SC2 Monitor/1_51fc1188-9c49-4a1f-bd67-0d68dca7e448.jpg",
+        "/images/Gaming Accessories/Gaming Monitor/Mechenike/Machenike MK34 Series - MK34QG165SC2 Monitor/2_e1938cfe-5b73-46ad-8425-dba71718629d.jpg"
+    ],
+    specs: "Brand Name: Machenike <br> Model: MK34QG165SC2 <br> Type: Gaming Monitor <br> Curved: Yes <br> Size: 34",
+    category: "monitor"
+}
+
+    };
+
+        // Function to initialize slider
+        function initSlider(slider) {
+            const slides = slider.querySelectorAll('.slide');
+            const prev = slider.querySelector('.prev');
+            const next = slider.querySelector('.next');
+            const dotsContainer = slider.querySelector('.dots');
+            let currentIndex = 0;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => showSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = slider.querySelectorAll('.dot');
+
+            function showSlide(index) {
+                slides[currentIndex].classList.remove('active');
+                dots[currentIndex].classList.remove('active');
+                currentIndex = index;
+                slides[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+            }
+
+            prev.addEventListener('click', () => {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) newIndex = slides.length - 1;
+                showSlide(newIndex);
+            });
+
+            next.addEventListener('click', () => {
+                let newIndex = (currentIndex + 1) % slides.length;
+                showSlide(newIndex);
+            });
+        }
+
+        // Load product details on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            const product = products[id];
+
+            if (product) {
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-price').textContent = product.price;
+                document.getElementById('product-description').textContent = product.description;
+                document.getElementById('product-specs').innerHTML = product.specs;
+
+                const slider = document.querySelector('.slider');
+                slider.innerHTML = `
+                    <button class="prev">&#10094;</button>
+                    ${product.images.map((src, index) => `<img src="${src}" alt="${product.name}" class="slide ${index === 0 ? 'active' : ''}">`).join('')}
+                    <button class="next">&#10095;</button>
+                    <div class="dots"></div>
+                `;
+
+                initSlider(slider);
+
+                                // === ensure add-to-cart has data-* attributes so existing click handler works ===
+                (function() {
+                    const addBtn = document.querySelector('.add-to-cart');
+                    if (addBtn) {
+                        try {
+                            // id variable exists in this scope above
+                            addBtn.setAttribute('data-id', id || '');
+                            addBtn.setAttribute('data-name', product.name || document.getElementById('product-name')?.textContent?.trim() || '');
+                            // normalize price to number string e.g. "RM279.00" -> "279.00"
+                            const priceString = String(product.price || document.getElementById('product-price')?.textContent || '').replace(/[^0-9.]/g, '') || '0';
+                            addBtn.setAttribute('data-price', priceString);
+                            // also set on parent in case handler uses parentElement
+                            const parent = addBtn.closest('.brand-card') || addBtn.parentElement;
+                            if (parent) {
+                                parent.setAttribute('data-id', id || '');
+                                parent.setAttribute('data-name', product.name || '');
+                                parent.setAttribute('data-price', priceString);
+                            }
+                            console.log('WROTE data-* to add-to-cart and parent:', addBtn.dataset, parent?.dataset);
+                        } catch (e) {
+                            console.error('Error writing data-* to add-to-cart button', e);
+                        }
+                    } else {
+                        console.warn('No .add-to-cart button found to write data-*');
+                    }
+                })();
+
+            } else {
+                document.querySelector('main').innerHTML = '<p>Product not found.</p>';
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <!-- For Header Part -->
+    <div class="fixedHeader">
+        <div class="logoContainer">
+            <img src="/images/Logo/Logo.png" alt="Gadget Mall Logo" class="logo">
+            <h1>Gadget Mall</h1>
+        </div>
+    
+        <div class="menu">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" id="categoriesLink">Categories</a>
+                    <ul class="dropdown-menu" id="categoriesMenu">
+                        <li><a href="/Product Categories/phoneAccessories.html">Phone Accessories</a></li>
+                        <li><a href="/Product Categories/Computer.html">Computer & Laptop Accessories</a></li>
+                        <li><a href="/Product Categories/gameaccessories.html">Gaming Accessories</a></li>
+                        <li><a href="/Product Categories/Car Gadget.html">Car Gadgets</a></li>
+                    </ul>
+                </li>
+                <li><a href="/BestSeller.html">Best Seller</a></li>
+                <li><a href="/ContactUs.html">Contact Us</a></li>
+                <li><a href="/AboutUs.html">About Us</a></li>
+                <li><a href="/term&condition.html">T&C</a></li>
+                <li><a href="/FAQ.html">FAQ</a></li>
+            </ul>
+        </div>
+    
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button class="search-btn" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button>
+            <a href="/cart.html" title="View Cart"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+
+
+    <header>
+        <h2>Product Details</h2>
+    </header>
+
+    <main class="product-details">
+        <section>
+            <div class="container">
+                <div class="product-container">
+                    <div class="product-image">
+                        
+                        <div class="slider">
+                                <!-- Images will be populated here -->
+                        </div>
+
+                    </div>
+                    <div class="product-details">
+                        <h2 id="product-name"></h2>
+
+                        <div class="price-container">
+                            <span id="product-price" class="current-price"></span>
+                            <span class="original-price">RM3999.00</span>
+                        </div>
+
+                        <button class="add-to-cart">Add to Cart</button>
+
+                        <p>   &nbsp;</p>
+                        <p>   &nbsp;</p>
+
+                        <p id="product-description"></p> 
+
+                        <div class="product-features">
+                            <div id="product-specs"></div>
+                        </div>
+                        
+                        <p>   &nbsp;</p>
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- For Footer Part -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section quick-links">
+                <h2>Quick Link</h2>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" id="footerCategoriesLink">Categories</a>
+                        <ul class="dropdown-menu" id="footerCategoriesMenu">
+                        <li><a href="/Product Categories/phoneAccessories.html">Phone Accessories</a></li>
+                        <li><a href="/Product Categories/Computer.html">Computer & Laptop Accessories</a></li>
+                        <li><a href="/Product Categories/gameaccessories.html">Gaming Accessories</a></li>
+                        <li><a href="/Product Categories/Car Gadget.html">Car Gadgets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/BestSeller.html">Best Seller</a></li>
+                    <li><a href="/ContactUs.html">Contact Us</a></li>
+                    <li><a href="/AboutUs.html">About Us</a></li>
+                    <li><a href="/term&condition.html">T&C</a></li>
+                    <li><a href="/FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-us">
+                <h2>Contact Us</h2>
+                <p>Don't be shy to ask us questions.</p>
+                <p>We're happy to help clarify your concerns.</p>
+                <p>You can send your question to us through:</p>
+                <p>Email: <a href="mailto:support@gadgetstore.com">support@gadgetstore.com</a></p>
+            </div>
+
+            <div class="footer-section terms-and-conditions">
+                <h2>Term & Condition</h2>
+                <p>Please read through all the terms & conditions.</p>
+                <p>Thank you for your understanding.</p>
+            </div>
+
+            <div class="footer-section gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-images">
+                    <img src="/images/Computer & Laptop Accessories/USB hubs/UGREEN/UGREEN USB Hub(5).jpg" alt="UGREEN USB HUB">
+                    <img src="/images/Car Gadget/car charger/Baseus/Baseus 1.jpg" alt="Baseus Car Gadget">
+                    <img src="/images/Computer & Laptop Accessories/Keyboards/AULA/AULA_Keyboard(1).jpg" alt="AULA">
+                    <img src="/images/Car Gadget/car charger/PowerAdapter/V380 PRO D5 1.jpg" alt="PowerAdapter Car Charger">
+                    <img src="/images/Gaming Accessories/GamingMonitor/MSI/MSI MAG 244F 23.8 FHD 200Hz Gaming Monitor/WebMAG244F1.jpg" alt="Gaming Monitor">
+                    <img src="/images/PhoneAccessories/Cable/REMAX/REMAX Cable 1.2.jpg" alt="Docking Station">
+                </div>
+            </div>
+        </div>
+        <div class="privacy-policy">
+            <a href="/privacypolicy.html">- Privacy Policy</a>
+        </div>
+    </footer>
+
+
+</body>
+</html>

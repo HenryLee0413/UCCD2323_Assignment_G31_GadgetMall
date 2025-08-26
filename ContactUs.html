@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  
+  <!-- Hyperlink for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/ContactUs.css">
+  <link rel="stylesheet" href="/css/stylesheet_HF.css">
+  <script src="/js/script.js" defer></script>
+  <script src="/js/ContactUs.js" defer></script>
+
+</head>
+
+<body>
+    <!-- For Header Part -->
+    <div class="fixedHeader">
+      <div class="logoContainer">
+          <img src="/images/Logo/Logo.png" alt="Gadget Mall Logo" class="logo">
+          <h1>Gadget Mall</h1>
+      </div>
+  
+      <div class="menu">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li class="dropdown">
+                  <a href="#" id="categoriesLink">Categories</a>
+                  <ul class="dropdown-menu" id="categoriesMenu">
+                      <li><a href="/Product Categories/phoneAccessories.html">Phone Accessories</a></li>
+                      <li><a href="/Product Categories/Computer.html">Computer & Laptop Accessories</a></li>
+                      <li><a href="/Product Categories/gameaccessories.html">Gaming Accessories</a></li>
+                      <li><a href="/Product Categories/Car Gadget.html">Car Gadgets</a></li>
+                  </ul>
+              </li>
+              <li><a href="BestSeller.html">Best Seller</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+              <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="term&condition.html">T&C</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+          </ul>
+      </div>
+  
+      <div class="search">
+          <input type="text" placeholder="Search">
+          <button class="search-btn" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button>
+          <a href="/cart.html" title="View Cart"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+  </div>
+  
+
+  <!-- Main Content -->
+  <main class="contactPage">
+    <div class="contactSection">
+
+      <!-- Container Header -->
+      <div class="contactHeader">
+        <h1>Contact Us ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ</h1>
+        <p>Get in touch with us for any inquiries.</p>
+      </div>
+
+      <div class="contactContainer">
+        <!-- Contact Us Info -->
+        <div class="contactInfo">
+          <h2>Contact Info</h2>
+          <table>
+            <tr>
+              <td><b>Address</b></td><td>:</td>
+              <td>Jalan Universiti, Bandar Barat, 31900 Kamapar, Perak</td>
+            </tr>
+            <tr>
+              <td><b>Phone</b></td><td>:</td>
+              <td>+60 12-123-1234</td>
+            </tr>
+            <tr>
+              <td><b>Email</b></td><td>:</td>
+              <td>support@gadgetstore.com</td>
+            </tr>
+            <tr>
+              <td><b>Hours</b></td><td>:</td>
+              <td>Mon - Sat (9AM - 9PM)</td>
+            </tr>
+          </table>
+
+          <!-- Social Media Icons -->
+          <div class="socialIcons">
+            <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:support@gadgetstore.com" class="email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/60123456789" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+
+          <!-- show the Kuala Lumpur Map -->
+          <!-- show the Kuala Lumpur Map -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31528.0!2d101.13869!3d4.33853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smy!4v1690000000000!5m2!1sen!2smy"
+            width="100%" 
+            height="300" 
+            style="border:0; border-radius: 8px; margin-top: 15px;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+
+        <!-- Contact Form -->
+        <div class="contactForm">
+          <h2>Send Us a Message</h2>
+          <form>
+            <input type="text" id="username" placeholder="Name" required>
+            <input type="email" id="Email" placeholder="Email Address" required>
+            <input type="tel" id="phoneNum" placeholder="Phone Number (optional)">
+            <input type="text" id="subject" placeholder="Subject" required>
+            <textarea rows="10" id="message" placeholder="Message" required></textarea>
+            <button onclick="SaveMessage()">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</main>
+
+    <!-- For Footer Part -->
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-section quick-links">
+              <h2>Quick Link</h2>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li class="dropdown">
+                      <a href="#" id="footerCategoriesLink">Categories</a>
+                      <ul class="dropdown-menu" id="footerCategoriesMenu">
+                      <li><a href="/Product Categories/phoneAccessories.html">Phone Accessories</a></li>
+                      <li><a href="/Product Categories/Computer.html">Computer & Laptop Accessories</a></li>
+                      <li><a href="/Product Categories/gameaccessories.html">Gaming Accessories</a></li>
+                      <li><a href="/Product Categories/Car Gadget.html">Car Gadgets</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="BestSeller.html">Best Seller</a></li>
+                  <li><a href="ContactUs.html">Contact Us</a></li>
+                  <li><a href="AboutUs.html">About Us</a></li>
+                  <li><a href="term&condition.html">T&C</a></li>
+                  <li><a href="FAQ.html">FAQ</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-section contact-us">
+              <h2>Contact Us</h2>
+              <p>Don't be shy to ask us questions.</p>
+              <p>We're happy to help clarify your concerns.</p>
+              <p>You can send your question to us through:</p>
+              <p>Email: <a href="mailto:support@gadgetstore.com">support@gadgetstore.com</a></p>
+          </div>
+
+          <div class="footer-section terms-and-conditions">
+              <h2>Term & Condition</h2>
+              <p>Please read through all the terms & conditions.</p>
+              <p>Thank you for your understanding.</p>
+          </div>
+
+          <div class="footer-section gallery">
+              <h2>Gallery</h2>
+              <div class="gallery-images">
+                <img src="/images/Computer & Laptop Accessories/USB hubs/UGREEN/UGREEN USB Hub(5).jpg" alt="UGREEN USB HUB">
+                <img src="/images/Car Gadget/car charger/Baseus/Baseus 1.jpg" alt="Baseus Car Gadget">
+                <img src="/images/Computer & Laptop Accessories/Keyboards/AULA/AULA_Keyboard(1).jpg" alt="AULA">
+                <img src="/images/Car Gadget/car charger/PowerAdapter/V380 PRO D5 1.jpg" alt="PowerAdapter Car Charger">
+                <img src="/images/Gaming Accessories/GamingMonitor/MSI/MSI MAG 244F 23.8 FHD 200Hz Gaming Monitor/WebMAG244F1.jpg" alt="Gaming Monitor">
+                <img src="/images/PhoneAccessories/Cable/REMAX/REMAX Cable 1.2.jpg" alt="Docking Station">
+              </div>
+          </div>
+      </div>
+      <div class="privacy-policy">
+          <a href="privacypolicy.html">- Privacy Policy</a>
+      </div>
+  </footer>
+
+
+</body>
+</html>

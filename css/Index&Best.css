@@ -1,0 +1,198 @@
+
+      
+    /* main part */
+    * { box-sizing: border-box; }
+    body { 
+
+  overflow-x: hidden; 
+
+    font-family: Arial, sans-serif; margin: 0; 
+    background-color: #f1f1f1;
+    }
+
+    
+
+    .MainPart{
+    display: flex;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    }
+
+    .MainPart > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* always 3 per row */
+    gap: 30px;
+    justify-content: center;   /* center horizontally */
+    align-items: flex-start;   /* align top edges */
+    background-color: #f1f1f1;
+    margin: 40px;
+    }
+
+    .MainPart > div a{
+    grid-column: 1 / span 3;  /* make it its own row (full width) */
+    text-align: left;         /* align text to left */
+    margin: 0px;             /* remove auto-centering */
+    width: auto;              /* let it expand naturally */
+    font-size: 40px;
+    font-weight: bold;   /* makes all <p> bold */
+    }
+
+    .MainPart > div p {
+    text-align: center;         /* align text to left */
+    margin-top: 8px;
+    width: auto;              /* let it expand naturally */
+    font-size: 30px;
+    font-style: Work Sans;
+    margin: 10px;
+    font-weight: 500;
+    text-decoration-line: none;    /*removes the default underline*/
+    }
+
+    .MainPart img {
+    width: 100%;           /* scale to container */
+    max-width: 300px;
+    height: auto;          /* keep ratio */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .MainPart img:hover {
+    transform: scale(1.1); /* slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4); /* stronger shadow on hover */
+    }
+
+    /* Make all hyperlinks black without underline */
+    a {
+    color: black;             /* link text color */
+    text-decoration: none;    /* remove underline */
+    }
+
+    /* Optional: Change color on hover */
+    a:hover {
+    color: darkblue;          /* or any highlight color */
+    text-decoration: underline; /* add underline back only on hover */
+    text-decoration-color: darkblue; /* underline is dark blue */
+    }
+
+
+
+    /* Auto Slider */
+    .slider {
+    position: relative;
+    width: 100vw;   /* full viewport width */
+    margin: auto;
+    overflow: hidden;
+    }
+
+    .slides {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    }
+
+    .slides img {
+    width: 100%;
+    flex-shrink: 0; /* prevent shrinking */
+    height: auto;
+    max-height: 300px; /* optional, keeps slider compact */
+    object-fit: cover;
+    }
+
+
+    /* Manual navigation (dots) */
+    .dots {
+      position: absolute;
+      bottom: 15px;              /* distance from bottom of slider */
+      left: 50%;                 /* move to middle */
+      transform: translateX(-50%); /* pull it back to center */
+      display: flex;
+      justify-content: center;
+      gap: 8px;                  /* spacing between dots */
+    }
+
+    .dots span {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.6s;
+    }
+    
+    .dots span.active {
+      background: #333;
+    }
+
+    /* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: none; /* hidden by default */
+  z-index: 9999;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.cookie-banner p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cookie-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#accept-cookies {
+  background: #28a745;
+  color: white;
+}
+
+#decline-cookies {
+  background: #dc3545;
+  color: white;
+}
+
+.cookie-buttons button:hover {
+  opacity: 0.9;
+}
+
+
+    /* Mobile optimization */
+@media (max-width: 600px) {
+  
+  .MainPart > div {
+    margin: 10px;      /* smaller margin */
+    gap: 10px;         /* smaller spacing between items */
+  }
+
+  .MainPart > div a {
+    font-size: 24px;   /* shrink section titles */
+  }
+
+  .MainPart > div p {
+    font-size: 16px;   /* shrink text under images */
+  }
+}

@@ -1,0 +1,241 @@
+/* =====================
+   Global Styles
+===================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+}
+
+/* =====================
+   Car Gadget Section (cargadget.html)
+===================== */
+.car-gadget-section {
+    background-color: #F2F2F2;
+    padding: 20px;
+    text-align: center;
+}
+
+.car-gadget-title h1 {
+    margin: 0;
+    padding-block-start: 50px;
+    font-size: 6rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.category-big-box {
+    background-color: #D9D9D9;
+    margin: 30px auto;
+    padding: 50px;
+    border-radius: 8px;
+    max-width: 2000px;
+}
+
+.category-big-box h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 4rem;
+}
+
+.category-big-box h2:first-child {
+    margin-top: 0;
+}
+
+.category-big-box h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Grid for category thumbnails (cargadget.html) */
+.product-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.product-item {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-item p {
+    margin-top: 8px;
+    font-size: 2rem;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+/* =====================
+   Product Page (cargadget1.html)
+===================== */
+.title-CarGadget {
+    text-align: center;
+    padding-block-start: 50px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 6rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.product-page {
+    background-color: #D9D9D9;
+    margin: 40px auto;
+    padding: 50px;
+    max-width: 1800px;
+    border-radius: 20px;
+}
+
+.product-section h2{
+    text-align: center;
+    padding: 15px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* Brand grid for detailed product cards */
+.brand-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    
+}
+.brand-grid a{
+    text-decoration: none;
+    color:#333;
+}
+
+.brand-card a h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.brand-card p{
+    text-align: center;
+}
+
+/* Fix the size of the brand-card */
+.brand-card img {
+    width: 200px;    /* fixed width */
+    height: 300px;   /* fixed height */
+    object-fit: cover;  
+    border-radius: 8px; 
+    display: block;
+    margin: 0 auto;  /* center the image */
+  }
+  
+
+/* Slider inside brand-card */
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider img {
+    display: none;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.slider img.active {
+    display: block;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider button.prev {
+    left: 5px;
+}
+
+.slider button.next {
+    right: 5px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.dots span {
+    height: 8px;
+    width: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    cursor: pointer;
+}
+DCEAF7
+.dots span.active {
+    background-color: #333;
+}
+
+.add-to-cart {
+    margin-top: auto;
+    align-self: center;
+    width: 100%;
+    padding: 12px 0;
+    font-weight: bold;
+    background-color: #DCEAF7;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;  
+}
+
+/* =====================
+   Responsive Grid Adjustments
+===================== */
+
+/* Desktop: 5 per row */
+@media (min-width: 1200px) {
+    .product-grid, .brand-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Tablet: 4 per row */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .product-grid, .brand-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large phones: 2 per row */
+@media (max-width: 767px) {
+    .product-grid, .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small phones: 1 per row */
+@media (max-width: 480px) {
+    .product-grid, .brand-grid {
+        grid-template-columns: 1fr;
+    }
+}

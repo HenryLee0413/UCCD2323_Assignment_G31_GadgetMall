@@ -1,0 +1,91 @@
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+
+    /* Header */
+    .contactHeader {
+    text-align: center;
+    background-color: #DCEAF7; 
+    padding: 80px 60px;
+    padding-block-start: 70px;
+  }
+     
+    /* The Contact Container */
+    .contactContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    /* Design for the contactInfo and contact Form*/
+    .contactInfo, .contactForm {
+      flex: 1 1 45%;
+      border: 1px solid black;
+      background: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .contactInfo p {
+      margin: 10px 0;
+    }
+
+    /* Social Icons */
+    .socialIcons {
+      margin-top: 20px;
+    }
+
+    .socialIcons a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 10px 0 0;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+      transition: 0.3s;
+      font-size: 18px;
+    }
+
+    .socialIcons a.facebook { background: #3b5998; }
+    .socialIcons a.instagram { background: #db4778; }
+    .socialIcons a.email { background: #429dd1; }
+    .socialIcons a.whatsapp { background: #25D366; }
+    .socialIcons a:hover { opacity: 0.8; }
+
+    .contactForm input, .contactForm textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .contactForm button {
+      background: #003cff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contactForm button:hover {
+      background:  #003cff;
+    }
